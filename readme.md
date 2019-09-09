@@ -10,7 +10,7 @@
 [Releases][release]&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Fonts](#patched-fonts)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Font Patcher](#font-patcher)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Wiki Documentation][wiki]&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Stickers][stickers]&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[VimDevIcons][vim-devicons]
 
 
-[![GitHub release][img-version-badge]][repo] [![Gitter][img-gitter-badge]][gitter] [![CodeClimate][img-code-climate-badge]][code-climate] [![Build Status][img-travis-ci]][travis-ci] [![Code of Conduct][coc-badge]][coc] [![PRs Welcome][prs-badge]][prs]  <a href="#patched-fonts" title=""><img src="https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/images/faux-shield-badge-os-logos.svg?sanitize=true" alt="Nerd Fonts - OS Support"></a> [![Twitter][twitter-badge]][twitter-intent]
+[![GitHub release][img-version-badge]][repo] [![Gitter][img-gitter-badge]][gitter] [![Build Status][img-travis-ci]][travis-ci] [![Code of Conduct][coc-badge]][coc] [![PRs Welcome][prs-badge]][prs]  <a href="#patched-fonts" title=""><img src="https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/images/faux-shield-badge-os-logos.svg?sanitize=true" alt="Nerd Fonts - OS Support"></a> [![Twitter][twitter-badge]][twitter-intent]
 
 
 </div>
@@ -28,7 +28,7 @@ The following Sankey flow diagram shows the current glyph sets included:
 
 ## Important Notices
 * `master` branch file paths are **not** considered stable. [Verify your repository URI references](#unstable-file-paths)
-* cloning this repository is **not** recommended unless you are going to be [contributing to development](#contributing)
+* cloning this repository is **not** recommended ([due to Repo size](#option-5-clone-the-repo)) unless you are going to be [contributing to development](#contributing)
 
 
 ## Table of Contents
@@ -87,9 +87,9 @@ _If you..._
 * A [FontForge Python script](#font-patcher) to patch any font
   * Includes an option to create **Monospaced (fixed-pitch, fixed-width)** _or_ **double-width (non-monospaced)** glyphs
   * For more details see the [**Font Patcher**](#font-patcher) section
-* **`44`** already [patched font families](#patched-fonts)
-* Over **`1,200,000`** unique combinations/variations of patched fonts [(more details)](#combinations)
-* Over **`2,500`** glyphs/icons combined [(more details)](#combinations)
+* **`48`** already [patched font families](#patched-fonts)
+* Over **`1,356,400`** unique combinations/variations of patched fonts [(more details)](#combinations)
+* Over **`2,600`** glyphs/icons combined [(more details)](#combinations)
   * Current glyph sets include: [Powerline with Extra Symbols][ryanoasis-powerline-extra-symbols], [Font Awesome][font-awesome], [Material Design Icons][font-material-design-icons], [Weather][font-weather], [Devicons][vorillaz-devicons], [Octicons][octicons], [Font Logos][font-linux] (Formerly [Font Linux][font-linux]), [Pomicons][gabrielelana-pomicons]
 * **Monospaced (fixed-pitch, fixed-width)** _or_ **double-width (non-monospaced)** glyphs version of each font
   * This refers to the Nerd Font glyphs themselves not necessarily the Font as a whole
@@ -100,88 +100,11 @@ _If you..._
 
 :mag: :mag: You can now search for glyphs easily on [NerdFonts.com][Cheat Sheet] via the [Cheat Sheet][]
 
-### Seti-UI + Custom
-> Based off of [Seti-UI] Icomoon with extra custom glyphs.
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-custom-#cheat-sheet)
-
-### [Devicons][vorillaz-devicons]
-> An iconic font made for developers, code jedis, ninjas, HTTPsters, evangelists and nerds(sic). / ([repo][vorillaz-devicons]) / ([website](https://vorillaz.github.io/devicons/))
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-dev-#cheat-sheet)
-
-### [Font Awesome][font-awesome]
-> The iconic font and CSS toolkit. / ([repo][font-awesome]) / ([website](http://fontawesome.io/))
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-fa-#cheat-sheet)
-
-### [Font Awesome Extension][font-awesome-extension]
-> Simple Font Awesome Extension. / ([repo][font-awesome-extension]) / ([website](https://andrelzgava.github.io/font-awesome-extension/))
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-fae-#cheat-sheet)
-
-### [Material Design Icons][font-material-design-icons]
-> 2000+ Material Design Icons from the Community. / ([repo][font-material-design-icons]) / ([website](https://materialdesignicons.com/))
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-mdi-#cheat-sheet)
-
-### [Weather][font-weather]
-> 215 Weather Themed Icons and CSS. / ([repo][font-weather]) / ([website](http://weathericons.io/))
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-weather-#cheat-sheet)
-
-### [Octicons][octicons]
-> GitHub's icons. / ([repo][octicons]) / ([website](https://octicons.github.com))
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-oct-#cheat-sheet)*
-
-<sub>* To avoid conflicts between icon sets, these were modified in the 'Complete' fonts. To view the original codepoints see the [Wiki](https://github.com/ryanoasis/nerd-fonts/wiki/Codepoint-Conflicts).</sub>
-
-### [Powerline Extra Symbols][ryanoasis-powerline-extra-symbols]
-> Provides extra Powerline separator glyphs and a column number glyph (CN). / ([repo][ryanoasis-powerline-extra-symbols])
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-ple-#cheat-sheet)
-
-### [IEC Power Symbols][website-iecpower]
-> Adding new characters into Unicode / ([website][website-iecpower])
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-iec-#cheat-sheet)
-
-### [Font Logos][font-linux] (Formerly [Font Linux][font-linux])
-> Font-logos is an icon font containing logos of popular linux distributions and other open source software for inclusion in websites. / ([repo][font-linux])
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-linux-#cheat-sheet)
-
-### [Pomicons][gabrielelana-pomicons]
-> 8 symbols for the ["Pomodoro Technique"®](https://cirillocompany.de/pages/pomodoro-technique). / ([repo][gabrielelana-pomicons])
-
-#### [:mag: :bookmark_tabs: See set on the NerdFonts.com Website](http://nerdfonts.com/?set=nf-pom-#cheat-sheet)
+See [Wiki: Glyph Sets and Codepoints for more details][wiki-glyph-sets-codepoints]
 
 ### Icon names in shell
 
-Download provided `.sh` files from [bin/scripts/lib/](bin/scripts/lib/) directory somewhere, recommended locations are `~/.local/share/fonts/` or `~/bin/`.
-
-- `i_all.sh` - helper to load all files you've downloaded at once
-- `i_dev.sh` - Devicons (198 icons, 8 does not have an established name)
-- `i_fa.sh` - Font Awesome (675 icons, 111 aliases)
-- `i_fae.sh` - Font Awesome Extension (170 icons)
-- `i_iec.sh` - IEC Power Symbols (5 icons)
-- `i_linux.sh` - Font Linux (20 icons)
-- `i_oct.sh` - Octicons (172 icons)
-- `i_ple.sh` - Powerline Extra Symbols (37 icons, 2 aliases, 16 does not have an established name)
-- `i_pom.sh` - Pomicons (11 icons)
-- `i_seti.sh` - Seti-UI + Custom (50 icons, 2 aliases, 5 does not have an established name)
-
-Then `source` the required file(s) and output `$i_*` variables to see icons:
-
-```sh
-source ~/.local/share/fonts/i_oct.sh
-echo $i_oct_heart
-# Output:
-# ♥
-```
-
-**NOTE:** You have to use one of the Nerd Fonts to see correct icons for some icon sets (Devicons, Font Awesome Extension, Font Linux), but other sets should work with their standard fonts too.
+See [Wiki: Icon names in shell][wiki-icon-names-in-shell]
 
 
 ## Patched Fonts
@@ -189,31 +112,34 @@ echo $i_oct_heart
 | Font Name                                         | Font Name and Repository          |\*RFN | EM Size | Status            |
 |:--------------------------------------------------|:----------------------------------|:-----|:--------|:------------------|
 | [3270 Nerd Font][p-3270]                          | [3270][f-3270]                    | NO   | 1000    | ![w] ![m2] ![l]   |
+| [Agave][p-agave]                                  | [Agave][f-agave]                  | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Anonymice Nerd Font][p-anonymous-pro]            | [Anonymous Pro][f-a-pro]          | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Arimo][p-arimo]                                  | [Arimo][f-arimo]                  | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Aurulent Sans Mono Nerd Font][p-aurulent]        |                                   | NO   | 1000    | ![w] ![m2] ![l]   |
 | [BigBlueTerminal][p-bigblueterm]                  |                                   | NO   | 1200    | ![w] ![m2] ![l]   |
 | [Bitstream Vera Sans Mono Nerd Font][p-bitstream] |                                   | NO   | 2048    | ![w] ![m2] ![l]   |
-| [Blex*][p-blex]                                   | [IBM Plex][f-ibm-plex]            | YES  | 1000    | ![w] ![m2] ![l]   |
+| [Blex*][p-blex]                                   | [IBM Plex Mono][f-ibm-plex]       | YES  | 1000    | ![w] ![m2] ![l]   |
 | [Code New Roman Nerd Font][p-code-nr]             |                                   | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Cousine Nerd Font][p-cousine]                    | [Cousine][f-cousine]              | NO   | 1000    | ![w] ![m2] ![l]   |
+| [DaddyTimeMono][p-daddytimemono]                  | [DaddyTimeMono][f-daddytimemono]  | NO   | 1024    | ![w] ![m2] ![l]   |
 | [DejaVu Sans Mono Nerd Font][p-dejavu]            |                                   | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Droid Sans Mono Nerd Font][p-droid]              |                                   | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Fantasque Sans Nerd Font][p-fantasque]           | [Fantasque Sans][f-fant]          | NO   | 2048    | ![w] ![m2] ![l]   |
-| [Fura Code Nerd Font*][p-fira-code]               | [Fira Code][f-fira-code]          | YES  | 1000    | ![w] ![m2] ![l]   |
-| [Fura Mono Nerd Font*][p-fira-mono]               | [Fira][f-fira-mono]               | YES  | 1000    | ![w] ![m2] ![l]   |
+| [Fira Code Nerd Font][p-fira-code]                | [Fira Code][f-fira-code]          | NO   | 1000    | ![w] ![m2] ![l]   |
+| [Fira Mono Nerd Font][p-fira-mono]                | [Fira][f-fira-mono]               | NO   | 1000    | ![w] ![m2] ![l]   |
 | [Go Mono Nerd Font][p-go-mono]                    | [Go-Mono][f-go-mono]              | NO   | 1000    | ![w] ![m2] ![l]   |
 | [Gohu Nerd Font][p-gohu]                          | [Gohu TTF][f-gohu2],[Gohu][f-gohu]| NO   | 1000    | ![w] ![m2] ![l]   |
 | [Hack Nerd Font][p-hack]                          | [Hack][f-hack]                    | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Hasklug Nerd Font*][p-hasklig]                   | [Hasklig][f-hasklig]              | YES  | 1000    | ![w] ![m2] ![l]   |
 | [Heavy Data Mono Nerd Font][p-heavy-data]         |                                   | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Hermut Nerd Font][p-hermit]                      |                                   | NO   | 1000    | ![w] ![m2] ![l]   |
+| [iM-Writing*][p-im-writing]                       | [iA-Writer][f-ia-writer]          | YES  | 1000    | ![w] ![m2] ![l]   |
 | [Inconsolata Nerd Font][p-inconsolata]            |                                   | NO   | 1000    | ![w] ![m2] ![l]   |
 | [Inconsolata Go Nerd Font][p-inconsolata-go]      |                                   | NO   | 1000    | ![w] ![m2] ![l]   |
 | [Inconsolata LGC Nerd Font][p-inconsolata-lgc]    |                                   | NO   | 1000    | ![w] ![m2] ![l]   |
-| [Iosevka Nerd Font][p-iosevka]                    | [Iosevka][f-iosevka]              | YES  | 1000    | [#83][s-iosevka]  |
+| [Iosevka Nerd Font][p-iosevka]                    | [Iosevka][f-iosevka]              | NO   | 1000    | [#83][s-iosevka]  |
 | [Lekton Nerd Font][p-lekton]                      |                                   | NO   | 1000    | ![w] ![m2] ![l]   |
-| [Literation Mono Nerd Font][p-liberation]         | [Liberation][f-liberation]        | YES  | 2048    | ![w] ![m2] ![l]   |
+| [Literation Mono Nerd Font*][p-liberation]        | [Liberation][f-liberation]        | YES  | 2048    | ![w] ![m2] ![l]   |
 | [Meslo Nerd Font][p-meslo]                        |                                   | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Monofur Nerd Font][p-monofur]                    |                                   | NO   | 2400    | ![w] ![m2] ![l]   |
 | [Monoid Nerd Font][p-monoid]                      |                                   | NO   | 1536    | ![w] ![m2] ![l]   |
@@ -230,9 +156,10 @@ echo $i_oct_heart
 | [Shure Tech Mono Nerd Font*][p-share-tech-mono]   | [Share Tech Mono][f-share]        | YES  | 1000    | ![w] ![m2] ![l]   |
 | [Space Mono Nerd Font][p-space-mono]              | [Space Mono][f-space]             | NO   | 1000    | ![w] ![m2] ![l]   |
 | [Terminess Nerd Font*][p-terminus]                | [Terminus Font][f-terminus]       | YES  | 1000    | ![w] ![m2] ![l]   |
-| [Tinos][p-tinos]                                  |                                   | YES  | 2048    | ![w] ![m2] ![l]   |
+| [Tinos][p-tinos]                                  |                                   | NO   | 2048    | ![w] ![m2] ![l]   |
 | [Ubuntu Nerd Font][p-ubuntu]                      |                                   | NO   | 1000    | ![w] ![m2] ![l]   |
 | [Ubuntu Mono Nerd Font][p-ubuntu-mono]            |                                   | NO   | 1000    | ![w] ![m2] ![l]   |
+| [Victor Mono][p-victor]                           | [Victor Mono][f-victor]           | NO   | 1000    | ![w] ![m2] ![l]   |
 
 <sub>_*RFN = Reserved Font Name_</sub>
 
@@ -316,7 +243,7 @@ brew cask install font-hack-nerd-font
 
 > Best option for **full control**, **all** or **most** of the fonts, or **contributing** to development.
 
-Cloning of this repository is **not** required nor efficient if you are simply only interested in a limited set of fonts.
+Cloning of this repository is **not** required nor efficient (mostly due to Repository size) if you are simply only interested in a limited set of fonts.
 
 However if you do want to clone the repo be sure to _shallow_ clone:
 ```sh
@@ -535,6 +462,8 @@ Repo References
 [ryanoasis-powerline-extra-symbols]:https://github.com/ryanoasis/powerline-extra-symbols
 [wiki]:https://github.com/ryanoasis/nerd-fonts/wiki
 [wiki-project-purpose]:https://github.com/ryanoasis/nerd-fonts/wiki/Project-Purpose
+[wiki-glyph-sets-codepoints]:https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points
+[wiki-icon-names-in-shell]:https://github.com/ryanoasis/nerd-fonts/wiki/Icon-Names-in-Shell
 [repo]:https://github.com/ryanoasis/nerd-fonts
 [gitter]:https://gitter.im/ryanoasis/nerd-fonts
 [code-climate]:https://codeclimate.com/github/ryanoasis/nerd-fonts
@@ -602,6 +531,10 @@ Font repos
 [f-mononoki]:https://madmalik.github.io/mononoki/
 [f-hasklig]:https://github.com/i-tu/Hasklig
 [f-ibm-plex]:https://github.com/IBM/plex
+[f-victor]:https://github.com/rubjo/victor-mono
+[f-daddytimemono]:https://github.com/BourgeoisBear/DaddyTimeMono
+[f-agave]:https://github.com/agarick/agave
+[f-ia-writer]:https://github.com/iaolo/iA-Fonts
 
 <!--
 Patched Font internal links
@@ -613,7 +546,7 @@ Patched Font internal links
 [p-arimo]:patched-fonts/Arimo
 [p-bigblueterm]:patched-fonts/BigBlueTerminal
 [p-bitstream]:patched-fonts/BitstreamVeraSansMono
-[p-blex]:patched-fonts/Blex
+[p-blex]:patched-fonts/IBMPlexMono
 [p-cousine]:patched-fonts/Cousine
 [p-dejavu]:patched-fonts/DejaVuSansMono
 [p-droid]:patched-fonts/DroidSansMono
@@ -651,6 +584,10 @@ Patched Font internal links
 [p-mononoki]:patched-fonts/Mononoki
 [p-code-nr]:patched-fonts/CodeNewRoman
 [p-hasklig]:patched-fonts/Hasklig
+[p-victor]:patched-fonts/VictorMono
+[p-daddytimemono]:patched-fonts/DaddyTimeMono
+[p-agave]:patched-fonts/Agave
+[p-im-writing]:patched-fonts/iA-Writer
 
 
 <!--

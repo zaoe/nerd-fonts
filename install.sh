@@ -138,15 +138,15 @@ nerdfonts_root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/patched-fonts"
 nerdfonts_dirs=("$nerdfonts_root_dir")
 
 # Accept font / directory names, to avoid installing all fonts
-if [ ! -z "$*" ]; then
+if [ -n "$*" ]; then
   nerdfonts_dirs=()
   for font in "${@}"; do
-    if [ ! -z "$font" ]; then
+    if [ -n "$font" ]; then
       # Ensure that directory exists, and offer suggestions if not
       if [[ ! -d "$nerdfonts_root_dir/$font" ]]; then
         echo -e "Font $font doesn't exist. Options are: \\n"
         find "$nerdfonts_root_dir" -maxdepth 1 -type d \( \! -name "$(basename "$nerdfonts_root_dir")" \) -exec basename {} \;
-        exit -1
+        exit 255
       fi
       nerdfonts_dirs=( "${nerdfonts_dirs[@]}" "$nerdfonts_root_dir/$font" )
     fi
@@ -169,17 +169,17 @@ find_exclude=
 
 # If we have patches or compat, define what to include
 include=()
-if [ ! -z "${patches[*]}" ]; then
+if [ -n "${patches[*]}" ]; then
   include=( "${include[@]}" "${patches[@]}" )
 fi
-if [ ! -z "${compat[*]}" ]; then
+if [ -n "${compat[*]}" ]; then
   include=( "${include[@]}" "${compat[@]}" )
 fi
 # Delete empty elements
 for i in "${!include[@]}"; do
   [ "${include[$i]}" = '' ] && unset include["$i"]
 done
-if [ ! -z "${include[*]}" ]; then
+if [ -n "${include[*]}" ]; then
   implode find_include "*' -and -name '*" "${include[@]}"
   find_include="-and -name '*${find_include}*'"
 fi
@@ -193,7 +193,7 @@ done
 for i in "${!exclude[@]}"; do
   [ "${exclude[$i]}" = '' ] && unset exclude["$i"]
 done
-if [ ! -z "${exclude[*]}" ]; then
+if [ -n "${exclude[*]}" ]; then
   implode find_exclude "*' -and \\! -name '*" "${exclude[@]}"
   find_exclude="-and \\! -name '*${find_exclude}*'"
 fi
@@ -287,7 +287,7 @@ case $mode in
 esac
 
 # Reset font cache on Linux
-if [[ -n $(which fc-cache) ]]; then
+if [[ -n $(command -v fc-cache) ]]; then
   [ "$quiet" = false ] && fc-cache -vf "$font_dir"
   [ "$quiet" = true ] && fc-cache -f "$font_dir"
   case $? in

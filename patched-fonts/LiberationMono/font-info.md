@@ -1,36 +1,19 @@
-Literation Mono Powerline
-=========================
+# LiberationMono
 
-Font creator
 
-:   Steve Mattesen
+## Why `Literation` and not `Liberation`?
 
-Version
+What's in a name? The reason for the name change is to comply with the SIL Open Font License (OFL), in partcular the [Reserved Font Name mechanism][SIL-RFN]
 
-:   2.00.1
+Some fonts have parts of their name "reserved" per the [Reserved Font Name mechanism][SIL-RFN]:
+> No Modified Version of the Font Software may use the Reserved Font
+> Name(s) unless explicit written permission is granted by the corresponding
+> Copyright Holder. This restriction only applies to the primary font name as
+> presented to the users.
 
-Source
+- The main goals seem to be to: `Avoid collisions`, `Protect authors`, `Minimize support`, and `Encourage derivatives`
 
-:   <https://fedorahosted.org/liberation-fonts/>
-
-License
-
-:   SIL OPEN FONT LICENSE Version 1.1
-
-Patched by
-
-:   [Carl X. Su](https://github.com/bcbcarl)
-
-The Liberation Fonts is font collection which aims to provide document
-layout compatibility as usage of Times New Roman, Arial, Courier New.
-
-Literation Mono Powerline is derived from The Liberation Fonts for
-Powerline users. The Powerline symbols is being made by Kim Silkebækken.
-The patch work is being undertaken by Carl X. Su.
-
-Both the final font Truetype/OpenType files and the design files used to
-produce the font family are distributed under an open licence and you
-are expressly encouraged to experiment, modify, share and improve.
+See the [Reserved Font Name section][SIL-RFN] for additional information
 
 ## Which font?
 
@@ -41,6 +24,11 @@ are expressly encouraged to experiment, modify, share and improve.
     * This includes specific tweaks to ensure the font works on Windows, in particular monospace identification and font name length limitations
   * If you are limited to monospaced fonts (because of your terminal, etc) then pick a font with the `'Mono'` suffix.
     * This denotes that the Nerd Font glyphs will be monospaced not necessarily that the entire font will be monospaced
+
+### Ligatures
+
+By the *Nerd Font* policy, the variant with the `'Mono'` suffix is not supposed to have any ligatures.
+Use the non-*Mono* variants to have ligatures.
 
 ### Explanation
 
