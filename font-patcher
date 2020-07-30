@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding=utf8
-# Nerd Fonts Version: 2.0.0-alpha
+# Nerd Fonts Version: 2.1.0
 # script version: 3.0.1
 
 from __future__ import absolute_import, print_function, unicode_literals
 
-version = "2.1.0-alpha"
+version = "2.1.0"
 projectName = "Nerd Fonts"
 projectNameAbbreviation = "NF"
 projectNameSingular = projectName[:-1]
@@ -105,8 +105,12 @@ class font_patcher:
         print("\nDone with Patch Sets, generating font...")
 
         # the `PfEd-comments` flag is required for Fontforge to save '.comment' and '.fontlog'.
-        self.sourceFont.generate(self.args.outputdir + "/" + self.sourceFont.fullname + self.extension, flags=(str('opentype'), str('PfEd-comments')))
-        print("\nGenerated: {}".format(self.sourceFont.fullname))
+        if self.sourceFont.fullname != None:
+            self.sourceFont.generate(self.args.outputdir + "/" + self.sourceFont.fullname + self.extension, flags=(str('opentype'), str('PfEd-comments')))
+            print("\nGenerated: {}".format(self.sourceFont.fontname))
+        else:
+            self.sourceFont.generate(self.args.outputdir + "/" + self.sourceFont.cidfontname + self.extension, flags=(str('opentype'), str('PfEd-comments')))
+            print("\nGenerated: {}".format(self.sourceFont.fullname))
 
         if self.args.postprocess:
             subprocess.call([self.args.postprocess, self.args.outputdir + "/" + self.sourceFont.fullname + self.extension])
@@ -264,7 +268,11 @@ class font_patcher:
         familyname = fontname
 
         # fullname (filename) can always use long/verbose font name, even in windows
-        fullname = self.sourceFont.fullname + verboseAdditionalFontNameSuffix
+        if self.sourceFont.fullname != None:
+            fullname = self.sourceFont.fullname + verboseAdditionalFontNameSuffix
+        else:
+            fullname = self.sourceFont.cidfontname + verboseAdditionalFontNameSuffix
+
         fontname = fontname + additionalFontNameSuffix.replace(" ", "")
 
         # let us try to get the 'style' from the font info in sfnt_names and fallback to the
@@ -309,25 +317,31 @@ class font_patcher:
         #
         # comply with SIL Open Font License (OFL)
         reservedFontNameReplacements = {
-            'source'    : 'sauce',
-            'Source'    : 'Sauce',
-            'hermit'    : 'hurmit',
-            'Hermit'    : 'Hurmit',
-            'hasklig'   : 'hasklug',
-            'Hasklig'   : 'Hasklug',
-            'Share'     : 'Shure',
-            'share'     : 'shure',
-            'IBMPlex'   : 'Blex',
-            'ibmplex'   : 'blex',
-            'IBM-Plex'  : 'Blex',
-            'IBM Plex'  : 'Blex',
-            'terminus'  : 'terminess',
-            'Terminus'  : 'Terminess',
-            'liberation': 'literation',
-            'Liberation': 'Literation',
-            'iAWriter'  : 'iMWriting',
-            'iA Writer' : 'iM Writing',
-            'iA-Writer' : 'iM-Writing'
+            'source'         : 'sauce',
+            'Source'         : 'Sauce',
+            'hermit'         : 'hurmit',
+            'Hermit'         : 'Hurmit',
+            'hasklig'        : 'hasklug',
+            'Hasklig'        : 'Hasklug',
+            'Share'          : 'Shure',
+            'share'          : 'shure',
+            'IBMPlex'        : 'Blex',
+            'ibmplex'        : 'blex',
+            'IBM-Plex'       : 'Blex',
+            'IBM Plex'       : 'Blex',
+            'terminus'       : 'terminess',
+            'Terminus'       : 'Terminess',
+            'liberation'     : 'literation',
+            'Liberation'     : 'Literation',
+            'iAWriter'       : 'iMWriting',
+            'iA Writer'      : 'iM Writing',
+            'iA-Writer'      : 'iM-Writing',
+            'Anka/Coder'     : 'AnaConder',
+            'anka/coder'     : 'anaconder',
+            'Cascadia Code'  : 'Caskaydia Cove',
+            'cascadia code'  : 'caskaydia cove',
+            'CascadiaCode'   : 'CaskaydiaCove',
+            'cascadiacode'   : 'caskaydiacove'
         }
 
         # remove overly verbose font names
@@ -373,7 +387,10 @@ class font_patcher:
 
         # TODO version not being set for all font types (e.g. ttf)
         # print("Version was {}".format(sourceFont.version))
-        self.sourceFont.version += ";" + projectName + " " + version
+        if self.sourceFont.version != None:
+            self.sourceFont.version += ";" + projectName + " " + version
+        else:
+            self.sourceFont.version = str(self.sourceFont.cidversion) + ";" + projectName + " " + version
         # print("Version now is {}".format(sourceFont.version))
 
 
@@ -496,7 +513,7 @@ class font_patcher:
         # Define the character ranges
         # Symbol font ranges
         self.patch_set = [
-            {'Enabled': True,                           'Name': "Seti-UI + Custom",        'Filename': "original-source.otf",              'Exact': False,                               'SymStart': 0xE4FA, 'SymEnd': 0xE52E, 'SrcStart': 0xE5FA, 'SrcEnd': 0xE62E, 'ScaleGlyph': None,             'Attributes': SYM_ATTR_DEFAULT},
+            {'Enabled': True,                           'Name': "Seti-UI + Custom",        'Filename': "original-source.otf",              'Exact': False,                               'SymStart': 0xE4FA, 'SymEnd': 0xE52F, 'SrcStart': 0xE5FA, 'SrcEnd': 0xE62F, 'ScaleGlyph': None,             'Attributes': SYM_ATTR_DEFAULT},
             {'Enabled': True,                           'Name': "Devicons",                'Filename': "devicons.ttf",                     'Exact': False,                               'SymStart': 0xE600, 'SymEnd': 0xE6C5, 'SrcStart': 0xE700, 'SrcEnd': 0xE7C5, 'ScaleGlyph': DEVI_SCALE_LIST,  'Attributes': SYM_ATTR_DEFAULT},
             {'Enabled': self.args.powerline,            'Name': "Powerline Symbols",       'Filename': "PowerlineSymbols.otf",             'Exact': True,                                'SymStart': 0xE0A0, 'SymEnd': 0xE0A2, 'SrcStart': None,   'SrcEnd': None,   'ScaleGlyph': None,             'Attributes': SYM_ATTR_POWERLINE},
             {'Enabled': self.args.powerline,            'Name': "Powerline Symbols",       'Filename': "PowerlineSymbols.otf",             'Exact': True,                                'SymStart': 0xE0B0, 'SymEnd': 0xE0B3, 'SrcStart': None,   'SrcEnd': None,   'ScaleGlyph': None,             'Attributes': SYM_ATTR_POWERLINE},
@@ -783,7 +800,19 @@ class font_patcher:
         """ Makes self.sourceFont monospace compliant """
 
         for glyph in self.sourceFont.glyphs():
-            self.remove_glyph_neg_bearings(glyph)
+            if (glyph.width == self.font_dim['width']):
+                # Don't tough the (negative) bearings if the width is ok
+                # Ligartures will have these.
+                continue
+
+            if (glyph.width != 0):
+                # If the width is zero this glyph is intened to be printed on top of another one.
+                # In this case we need to keep the negative bearings to shift it 'left'.
+                # Things like &Auml; have these: composed of U+0041 'A' and U+0308 'double dot above'
+                #
+                # If width is not zero, correct the bearings such that they are within the width:
+                self.remove_glyph_neg_bearings(glyph)
+
             self.set_glyph_width_mono(glyph)
 
 
